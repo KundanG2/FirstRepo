@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        .clock {
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+            text-align: center;
+            margin-top: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="clock" class="clock"></div>
+    <script>
+        function updateClock() {
+            var clock = document.getElementById('clock');
+            var d = new Date();
+            var s = String(d.getSeconds()).padStart(2, '0');
+            var m = String(d.getMinutes()).padStart(2, '0');
+            var h = String(d.getHours()).padStart(2, '0');
+            clock.textContent = h + ':' + m + ':' + s;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // initial call to display clock immediately
+    </script>
+</body>
+</html>
